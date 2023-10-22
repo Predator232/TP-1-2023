@@ -45,7 +45,7 @@ void AnimalKeeper::saveToFile(const std::string& filename) {
         std::cout << "Animals saved to file: " << filename << std::endl;
     }
     else {
-        std::cerr << "Failed to open the file for saving." << std::endl;
+        throw std::runtime_error("Failed to open the file for saving.");
     }
 }
 
@@ -74,6 +74,6 @@ void AnimalKeeper::loadFromFile(const std::string& filename) {
         std::cout << "Animals loaded from file: " << filename << std::endl;
     }
     else {
-        std::cerr << "Failed to open the file for loading." << std::endl;
+        throw std::runtime_error("Failed to open the file for loading.");
     }
 }

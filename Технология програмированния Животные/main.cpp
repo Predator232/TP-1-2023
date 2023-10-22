@@ -83,8 +83,14 @@ int main() {
             std::string filename;
             std::cout << "Enter the filename to save animals: ";
             std::cin >> filename;
-            keeper.saveToFile(filename);
+            try {
+                keeper.saveToFile(filename);
+            }
+            catch (const std::exception& e) {
+                std::cerr << "Error: " << e.what() << std::endl;
+            }
             break;
+
         }
         case 7:
         {   
@@ -92,7 +98,12 @@ int main() {
             std::string filename;
             std::cout << "Enter the filename to load animals: ";
             std::cin >> filename;
-            keeper.loadFromFile(filename);
+            try {
+                keeper.loadFromFile(filename);
+            }
+            catch (const std::exception& e) {
+                std::cerr << "Error: " << e.what() << std::endl;
+            }
             break;
         }
         case 0:
