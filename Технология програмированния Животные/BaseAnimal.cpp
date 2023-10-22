@@ -1,4 +1,4 @@
-#include "BaseAnimal.h"
+﻿#include "BaseAnimal.h"
 
 Animal::Animal(const std::string& breed, const std::string& color)
     : breed(breed), color(color) {

@@ -1,4 +1,4 @@
-#ifndef BIRD_H
+﻿#ifndef BIRD_H
 #define BIRD_H
 
 #include "BaseAnimal.h"

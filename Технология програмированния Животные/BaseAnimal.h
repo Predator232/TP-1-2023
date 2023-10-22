@@ -1,4 +1,4 @@
-#ifndef ANIMAL_H
+﻿#ifndef ANIMAL_H
 #define ANIMAL_H
 
 #include <iostream>
