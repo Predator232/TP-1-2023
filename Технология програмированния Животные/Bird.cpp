@@ -7,14 +7,24 @@ Bird::Bird(const std::string& breed, const std::string& color, const std::string
 
 
 void Bird::serialize(std::ostream& os) const {
-    os << "Bird ";
-    Animal::serialize(os);
-    os << " " << diet << " " << habitat;
+    os << "Bird\n";
+    os << "Breed: " << breed << "\n";
+    os << "Color: " << color << "\n";
+    os << "Diet: " << diet << "\n";
+    os << "Habitat: " << habitat << "\n";
 }
 
 void Bird::deserialize(std::istream& is) {
-    Animal::deserialize(is);
-    is >> diet >> habitat;
+    std::string line;
+    getline(is, line); 
+    getline(is, line); 
+    breed = line.substr(line.find(":") + 2); 
+    getline(is, line); 
+    color = line.substr(line.find(":") + 2); 
+    getline(is, line);
+    diet = line.substr(line.find(":") + 2); 
+    getline(is, line);
+    habitat = line.substr(line.find(":") + 2);
 }
 
 Bird::~Bird() {

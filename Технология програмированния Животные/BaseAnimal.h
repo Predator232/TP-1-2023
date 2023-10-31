@@ -26,7 +26,7 @@ public:
 
     virtual void printInfo();
 
-private:
+protected:
     std::string breed;
     std::string color;
 };

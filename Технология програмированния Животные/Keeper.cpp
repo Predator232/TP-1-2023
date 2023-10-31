@@ -37,13 +37,14 @@ void AnimalKeeper::modifyAnimalInfo() {
         std::cout << "4. Owner Name (for Cats)\n";
         std::cout << "Enter your choice: ";
         std::cin >> modificationType;
+        std::cin.ignore();
 
         if (modificationType == 1) {
             std::string newBreed, newColor;
             std::cout << "Enter new breed: ";
-            std::cin >> newBreed;
+            getline(std::cin, newBreed);
             std::cout << "Enter new color: ";
-            std::cin >> newColor;
+            getline(std::cin, newColor);
             selectedAnimal->updateInfo(newBreed, newColor);
         }
         else if (modificationType == 2) {
@@ -51,13 +52,13 @@ void AnimalKeeper::modifyAnimalInfo() {
             if (Fish* fish = dynamic_cast<Fish*>(selectedAnimal)) {
                 std::string newDiet;
                 std::cout << "Enter new diet: ";
-                std::cin >> newDiet;
+                getline(std::cin, newDiet);
                 fish->updateDiet(newDiet);
             }
             else if (Bird* bird = dynamic_cast<Bird*>(selectedAnimal)) {
                 std::string newDiet;
                 std::cout << "Enter new diet: ";
-                std::cin >> newDiet;
+                getline(std::cin, newDiet);
                 bird->updateDiet(newDiet);
             }
         }
@@ -66,7 +67,7 @@ void AnimalKeeper::modifyAnimalInfo() {
             if (Bird* bird = dynamic_cast<Bird*>(selectedAnimal)) {
                 std::string newHabitat;
                 std::cout << "Enter new habitat: ";
-                std::cin >> newHabitat;
+                getline(std::cin, newHabitat);
                 bird->updateHabitat(newHabitat);
             }
         }
@@ -75,7 +76,7 @@ void AnimalKeeper::modifyAnimalInfo() {
             if (Cat* cat = dynamic_cast<Cat*>(selectedAnimal)) {
                 std::string newOwnerName;
                 std::cout << "Enter new owner name: ";
-                std::cin >> newOwnerName;
+                getline(std::cin, newOwnerName);
                 cat->updateOwnerName(newOwnerName);
             }
         }
@@ -88,6 +89,9 @@ void AnimalKeeper::modifyAnimalInfo() {
         std::cout << "Invalid index. No animal was modified." << std::endl;
     }
 }
+
+
+
 
 void AnimalKeeper::addFish(const std::string& breed, const std::string& color, const std::string& diet) {
     animals.push_back(new Fish(breed, color, diet));

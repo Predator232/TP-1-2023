@@ -1,2 +1,22 @@
-Fish wwwww eeeee rrrrr
-Cat tttt yyyy uuuu iiiii
+Fish
+Breed: Largemouth bass
+Color: Green
+Diet: Worms and Crikets
+
+Bird
+Breed: Hawk
+Color: Brown
+Diet: Frogs and insects
+Habitat: All continents exept Antarctica
+
+Cat
+Breed: American Bobtail
+Color: Grey stripes
+Owner Name: Alex Horne
+Name: Bob
+
+Cat
+Breed: British Shorthair
+Color: Grey
+Owner Name: Dmitrii
+Name: Pushok

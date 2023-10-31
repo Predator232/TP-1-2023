@@ -22,17 +22,19 @@ int main() {
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
+        std::cin.ignore();
+
         switch (choice) {
         case 1:
         {
             system("cls");
             std::string fishBreed, fishColor, fishDiet;
             std::cout << "Enter breed for the Fish: ";
-            std::cin >> fishBreed;
+            getline(std::cin, fishBreed);
             std::cout << "Enter color for the Fish: ";
-            std::cin >> fishColor;
+            getline(std::cin, fishColor);
             std::cout << "Enter diet for the Fish: ";
-            std::cin >> fishDiet;
+            getline(std::cin, fishDiet);
             keeper.addFish(fishBreed, fishColor, fishDiet);
             break;
         }
@@ -41,13 +43,13 @@ int main() {
             system("cls");
             std::string birdBreed, birdColor, birdDiet, birdHabitat;
             std::cout << "Enter breed for the Bird: ";
-            std::cin >> birdBreed;
+            getline(std::cin, birdBreed);
             std::cout << "Enter color for the Bird: ";
-            std::cin >> birdColor;
+            getline(std::cin, birdColor);
             std::cout << "Enter diet for the Bird: ";
-            std::cin >> birdDiet;
+            getline(std::cin, birdDiet);
             std::cout << "Enter habitat for the Bird: ";
-            std::cin >> birdHabitat;
+            getline(std::cin, birdHabitat);
             keeper.addBird(birdBreed, birdColor, birdDiet, birdHabitat);
             break;
         }
@@ -56,13 +58,13 @@ int main() {
             system("cls");
             std::string catBreed, catColor, ownerName, catName;
             std::cout << "Enter breed for the Cat: ";
-            std::cin >> catBreed;
+            getline(std::cin, catBreed);
             std::cout << "Enter color for the Cat: ";
-            std::cin >> catColor;
-            std::cout << "Enter owner's name for the Cat: ";
-            std::cin >> ownerName;
+            getline(std::cin, catColor);
+            std::cout << "Enter owner's name: ";
+            getline(std::cin, ownerName);
             std::cout << "Enter name for the Cat: ";
-            std::cin >> catName;
+            getline(std::cin, catName);
             keeper.addCat(catBreed, catColor, ownerName, catName);
             break;
         }

@@ -6,14 +6,24 @@ Cat::Cat(const std::string& breed, const std::string& color, const std::string& 
 }
 
 void Cat::serialize(std::ostream& os) const {
-    os << "Cat ";
-    Animal::serialize(os);
-    os << " " << ownerName << " " << name;
+    os << "Cat\n";
+    os << "Breed: " << breed << "\n";
+    os << "Color: " << color << "\n";
+    os << "Owner Name: " << ownerName << "\n";
+    os << "Name: " << name << "\n";
 }
 
 void Cat::deserialize(std::istream& is) {
-    Animal::deserialize(is);
-    is >> ownerName >> name;
+    std::string line;
+    getline(is, line); 
+    getline(is, line);
+    breed = line.substr(line.find(":") + 2); 
+    getline(is, line); 
+    color = line.substr(line.find(":") + 2); 
+    getline(is, line); 
+    ownerName = line.substr(line.find(":") + 2); 
+    getline(is, line); 
+    name = line.substr(line.find(":") + 2); 
 }
 
 Cat::~Cat() {

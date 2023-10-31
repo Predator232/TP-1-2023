@@ -18,7 +18,7 @@ public:
 
     void printInfo() override;
 
-private:
+protected:
     std::string diet;
 };
 
