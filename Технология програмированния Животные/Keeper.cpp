@@ -16,7 +16,6 @@ void AnimalKeeper::modifyAnimalInfo() {
         return;
     }
 
-    // Display a list of animals with their indices
     std::cout << "Select an animal to modify:\n";
     for (size_t i = 0; i < animals.size(); ++i) {
         std::cout << i + 1 << ". ";
@@ -48,7 +47,7 @@ void AnimalKeeper::modifyAnimalInfo() {
             selectedAnimal->updateInfo(newBreed, newColor);
         }
         else if (modificationType == 2) {
-            // Modify diet for Fish and Birds
+
             if (Fish* fish = dynamic_cast<Fish*>(selectedAnimal)) {
                 std::string newDiet;
                 std::cout << "Enter new diet: ";
@@ -63,7 +62,7 @@ void AnimalKeeper::modifyAnimalInfo() {
             }
         }
         else if (modificationType == 3) {
-            // Modify habitat for Birds
+
             if (Bird* bird = dynamic_cast<Bird*>(selectedAnimal)) {
                 std::string newHabitat;
                 std::cout << "Enter new habitat: ";
@@ -72,7 +71,7 @@ void AnimalKeeper::modifyAnimalInfo() {
             }
         }
         else if (modificationType == 4) {
-            // Modify owner name for Cats
+
             if (Cat* cat = dynamic_cast<Cat*>(selectedAnimal)) {
                 std::string newOwnerName;
                 std::cout << "Enter new owner name: ";
