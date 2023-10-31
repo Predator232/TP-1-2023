@@ -20,6 +20,10 @@ public:
     void printAllAnimals();
     void saveToFile(const std::string& filename);
     void loadFromFile(const std::string& filename);
+    void modifyAnimalInfo();
+    std::vector<Animal*>& getAnimals() {
+        return animals;
+    }
 
 private:
     std::vector<Animal*> animals;

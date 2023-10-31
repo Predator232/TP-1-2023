@@ -10,6 +10,10 @@ public:
     void serialize(std::ostream& os) const override;
     void deserialize(std::istream& is) override;
 
+    void updateDiet(const std::string& newDiet) {
+        diet = newDiet;
+    }
+
     ~Fish();
 
     void printInfo() override;

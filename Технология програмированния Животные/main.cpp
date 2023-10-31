@@ -17,6 +17,7 @@ int main() {
         std::cout << "5. Print all animals\n";
         std::cout << "6. Save animals to a file\n";
         std::cout << "7. Load animals from a file\n";
+        std::cout << "8. Modify an Animal\n";
         std::cout << "0. Exit\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
@@ -106,6 +107,10 @@ int main() {
             }
             break;
         }
+        case 8:
+
+            keeper.modifyAnimalInfo();
+            break;
         case 0:
             break;
         default:

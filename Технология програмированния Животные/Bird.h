@@ -7,6 +7,14 @@ class Bird : public Animal {
 public:
     Bird(const std::string& breed, const std::string& color, const std::string& diet, const std::string& habitat);
 
+    void updateHabitat(const std::string& newHabitat) override {
+        habitat = newHabitat;
+    }
+
+    void updateDiet(const std::string& newDiet) {
+        diet = newDiet;
+    }
+
     void serialize(std::ostream& os) const override;
     void deserialize(std::istream& is) override;
 

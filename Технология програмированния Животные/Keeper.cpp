@@ -9,6 +9,87 @@ AnimalKeeper::~AnimalKeeper() {
     }
 }
 
+void AnimalKeeper::modifyAnimalInfo() {
+    system("cls");
+    if (animals.empty()) {
+        std::cout << "No animals are currently stored." << std::endl;
+        return;
+    }
+
+    // Display a list of animals with their indices
+    std::cout << "Select an animal to modify:\n";
+    for (size_t i = 0; i < animals.size(); ++i) {
+        std::cout << i + 1 << ". ";
+        animals[i]->printInfo();
+    }
+
+    int selectedIndex;
+    std::cout << "Enter the index of the animal you want to modify: ";
+    std::cin >> selectedIndex;
+
+    if (selectedIndex > 0 && selectedIndex <= static_cast<int>(animals.size())) {
+        Animal* selectedAnimal = animals[selectedIndex - 1];
+
+        int modificationType;
+        std::cout << "Select the type of modification:\n";
+        std::cout << "1. Breed and Color\n";
+        std::cout << "2. Diet (for Birds/Fish)\n";
+        std::cout << "3. Habitat (for Birds)\n";
+        std::cout << "4. Owner Name (for Cats)\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> modificationType;
+
+        if (modificationType == 1) {
+            std::string newBreed, newColor;
+            std::cout << "Enter new breed: ";
+            std::cin >> newBreed;
+            std::cout << "Enter new color: ";
+            std::cin >> newColor;
+            selectedAnimal->updateInfo(newBreed, newColor);
+        }
+        else if (modificationType == 2) {
+            // Modify diet for Fish and Birds
+            if (Fish* fish = dynamic_cast<Fish*>(selectedAnimal)) {
+                std::string newDiet;
+                std::cout << "Enter new diet: ";
+                std::cin >> newDiet;
+                fish->updateDiet(newDiet);
+            }
+            else if (Bird* bird = dynamic_cast<Bird*>(selectedAnimal)) {
+                std::string newDiet;
+                std::cout << "Enter new diet: ";
+                std::cin >> newDiet;
+                bird->updateDiet(newDiet);
+            }
+        }
+        else if (modificationType == 3) {
+            // Modify habitat for Birds
+            if (Bird* bird = dynamic_cast<Bird*>(selectedAnimal)) {
+                std::string newHabitat;
+                std::cout << "Enter new habitat: ";
+                std::cin >> newHabitat;
+                bird->updateHabitat(newHabitat);
+            }
+        }
+        else if (modificationType == 4) {
+            // Modify owner name for Cats
+            if (Cat* cat = dynamic_cast<Cat*>(selectedAnimal)) {
+                std::string newOwnerName;
+                std::cout << "Enter new owner name: ";
+                std::cin >> newOwnerName;
+                cat->updateOwnerName(newOwnerName);
+            }
+        }
+        else {
+            std::cout << "Invalid modification type. No changes were made." << std::endl;
+        }
+        std::cout << "Animal information updated successfully." << std::endl;
+    }
+    else {
+        std::cout << "Invalid index. No animal was modified." << std::endl;
+    }
+}
+
 void AnimalKeeper::addFish(const std::string& breed, const std::string& color, const std::string& diet) {
     animals.push_back(new Fish(breed, color, diet));
 }
