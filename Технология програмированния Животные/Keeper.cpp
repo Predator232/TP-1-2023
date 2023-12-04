@@ -1,6 +1,11 @@
 ﻿#include "Keeper.h"
 #include <fstream>
 
+const Animaloperator& operator++(Animaloperator& i) {
+    i.value++;
+    return i;
+}
+
 AnimalKeeper::AnimalKeeper() {}
 
 AnimalKeeper::~AnimalKeeper() {

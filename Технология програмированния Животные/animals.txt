@@ -20,3 +20,9 @@ Breed: British Shorthair
 Color: Grey
 Owner Name: Dmitrii
 Name: Pushok
+
+Cat
+Breed: British
+Color: white
+Owner Name: gleb
+Name: kub

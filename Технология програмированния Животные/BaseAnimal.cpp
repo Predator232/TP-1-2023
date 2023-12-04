@@ -5,6 +5,16 @@ Animal::Animal(const std::string& breed, const std::string& color)
     std::cout << "Animal constructor called." << std::endl;
 }
 
+Animal::Animal()
+{
+    std::cout << "Animal constructor without attributes called." << std::endl;
+}
+
+Animal::Animal(const Animal& animal_copy){
+    breed = animal_copy.breed;
+    std::cout << "Animal constructor called." << std::endl;
+}
+
 
 void Animal::serialize(std::ostream& os) const {
     os << breed << " " << color;

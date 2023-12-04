@@ -8,6 +8,16 @@
 #include <fstream>
 #include <vector>
 
+class Animaloperator {
+private:
+    int value;
+public:
+
+    Animaloperator(int i) : value(i)
+    {}
+    friend const Animaloperator& operator++(Animaloperator& i);
+};
+
 class AnimalKeeper {
 public:
     AnimalKeeper();

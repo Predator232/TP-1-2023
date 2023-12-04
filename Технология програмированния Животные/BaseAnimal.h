@@ -4,9 +4,21 @@
 #include <iostream>
 #include <string>
 
+class abstraktnie {
+public:
+    virtual void virtfunc() = 0;   // virtual func
+};
+
 class Animal {
 public:
     Animal(const std::string& breed, const std::string& color);
+    Animal();          // constructor without parameters
+    Animal(const Animal& animal_copy); // constructor copy
+
+
+    void virtfunc() {
+        std::cout << "virtual function works" << std::endl; // virtual function
+    }
 
     virtual void updateInfo(const std::string& newBreed, const std::string& newColor) {
         breed = newBreed;
